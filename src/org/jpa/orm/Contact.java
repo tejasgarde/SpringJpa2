@@ -7,13 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
 
 @Entity
 @Table(name="contact")
+@NamedQueries({@NamedQuery(name="Contact.findAll", query="select c from Contact c")})
 public class Contact {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

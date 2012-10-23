@@ -22,7 +22,7 @@
 		
 	
 	
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 	
 	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -48,6 +48,8 @@
 	</bean>
 	
 	
-	<context:component-scan base-package="org.spring.orm" />
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<context:component-scan base-package="org.jpa.orm" />
 		
 </beans>
